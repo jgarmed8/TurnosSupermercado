@@ -47,6 +47,14 @@ Para recoger los palés suelen ir dos trabajadores y, mientras están en Granada
 
 Si falta alguien, como ocurrió ese martes, puede ser necesario cambiar el reparto que ya estaba hecho.
 
+## Qué hace falta procesar
+
+Para hacer el reparto hay que analizar qué trabajadores están disponibles y qué tareas hay que cubrir en cada momento.
+
+También hay que calcular con cuántas personas se puede contar en la tienda cuando alguien falta o cuando dos trabajadores se van a Granada, y validar que siga habiendo alguien pendiente de la caja.
+
+Si alguna de estas condiciones cambia, hay que generar un nuevo reparto de tareas teniendo en cuenta quién sigue disponible y qué tareas quedan por hacer.
+
 ## Por qué hace falta que esté en la nube
 
 Ahora mismo el cuadrante está guardado en un Excel en el ordenador de casa del responsable, mientras que los trabajadores reciben sus turnos y los cambios por WhatsApp.
@@ -61,4 +69,4 @@ Tener el cuadrante accesible desde distintos dispositivos permitiría consultar 
 
 ## Documentación
 
-- [Evidencias del Objetivo 0](docs/objetivo-0.md)
+- [Configuración del repositorio](docs/objetivo-0.md)

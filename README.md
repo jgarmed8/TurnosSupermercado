@@ -65,7 +65,7 @@ Tener el cuadrante accesible desde distintos dispositivos permitiría consultar 
 
 ## Juego de rol
 
-![Tarjeta utilizada en el juego de rol](img/tarjeta-cliente.png)
+[Tarjeta utilizada en el juego de rol](img/tarjeta-cliente.png)
 
 ## Documentación
 

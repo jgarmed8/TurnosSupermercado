@@ -8,7 +8,7 @@ Como responsable del supermercado, cuando preparo una jornada necesito saber qu�
 
 Sin esa información puedo preparar un reparto de tareas que después no se pueda cumplir.
 
-**Jornada relacionada:** Jornada 1.
+**Jornada relacionada:** [Jornada 1](user-journeys.md#jornada-1-organización-de-una-jornada)
 
 ## [HU002] No sé si el reparto de la jornada cumple todas las reglas
 
@@ -16,7 +16,7 @@ Como responsable del supermercado, cuando ya he repartido las tareas necesito sa
 
 Si hay algún trabajador que no está disponible, tiene dos tareas al mismo tiempo o una tarea necesaria no está cubierta, necesito detectarlo antes de dar por bueno el reparto.
 
-**Jornada relacionada:** Jornada 1.
+**Jornada relacionada:** [Jornada 1](user-journeys.md#jornada-1-organización-de-una-jornada)
 
 ## [HU003] Tengo que reorganizar la jornada cuando cambia la disponibilidad de un trabajador
 
@@ -24,4 +24,4 @@ Como responsable del supermercado, a veces un trabajador falta o cambia su dispo
 
 En ese caso necesito volver a repartir las tareas con los trabajadores que siguen disponibles para que las tareas necesarias sigan cubiertas.
 
-**Jornada relacionada:** Jornada 2.
+**Jornada relacionada:** [Jornada 2](user-journeys.md#jornada-2-reorganización-por-un-cambio-de-disponibilidad)

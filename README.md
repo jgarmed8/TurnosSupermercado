@@ -12,7 +12,7 @@ Si falta alguien o cambia algún turno, hay que volver a cuadrar parte del traba
 
 Este problema lo conozco porque mi padre es quien se encarga de organizar los turnos del supermercado. Yo también ayudo allí durante el verano, así que he visto cómo se reparte el trabajo y qué pasa cuando falta gente.
 
-En total trabajan cinco personas. Los días que hay recogida de palés suelen salir dos a Granada y se quedan tres en la tienda.
+En el supermercado trabajan nueve personas. Los días que hay recogida de palés suelen ir dos trabajadores a Granada, por lo que durante ese tiempo hay menos personal disponible en la tienda.
 
 ## Cómo se organiza ahora
 
@@ -30,7 +30,7 @@ Como quedaba menos gente en la tienda, hubo que cambiar a otro trabajador de tar
 
 Para organizar los turnos se dispone de:
 
-- los cinco trabajadores;
+- los trabajadores del supermercado;
 - los turnos de cada uno;
 - su disponibilidad;
 - las tareas que hay que hacer;
@@ -70,3 +70,23 @@ Tener el cuadrante accesible desde distintos dispositivos permitiría consultar 
 ## Documentación
 
 - [Configuración del repositorio](docs/objetivo-0.md)
+
+## Planificación
+
+La planificación del objetivo 1 se encuentra en:
+
+- [Personas](docs/objetivos/objetivo-1/personas.md)
+- [Jornadas de usuario](docs/objetivos/objetivo-1/user-journeys.md)
+- [Historias de usuario](docs/objetivos/objetivo-1/historias-usuarios.md)
+- [Milestones](docs/objetivos/objetivo-1/milestones.md)
+
+### Historias de usuario en GitHub
+
+- [HU001 - No sé qué trabajadores están disponibles ni qué tareas puede realizar cada uno](https://github.com/jgarmed8/TurnosSupermercado/issues/2)
+- [HU002 - No sé si el reparto de la jornada cumple todas las reglas](https://github.com/jgarmed8/TurnosSupermercado/issues/3)
+- [HU003 - Tengo que reorganizar la jornada cuando cambia la disponibilidad de un trabajador](https://github.com/jgarmed8/TurnosSupermercado/issues/4)
+
+### Milestones
+
+- [Milestone 0 - Paquete de jornadas](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
+- [Milestone 1 - Comprobación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)

@@ -1,0 +1,194 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 8eadc65..41f1720 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -73,20 +73,16 @@[m [mTener el cuadrante accesible desde distintos dispositivos permitiría consultar[m
+ [m
+ ## Planificación[m
+ [m
+[31m-La planificación del objetivo 1 se encuentra en:[m
+[32m+[m[32mLa planificación del objetivo 1 está en:[m
+ [m
+[31m-- [Personas](docs/objetivos/objetivo-1/personas.md)[m
+[31m-- [Jornadas de usuario](docs/objetivos/objetivo-1/user-journeys.md)[m
+[31m-- [Historias de usuario](docs/objetivos/objetivo-1/historias-usuarios.md)[m
+[31m-- [Milestones](docs/objetivos/objetivo-1/milestones.md)[m
+[32m+[m[32m- [Organización de turnos del supermercado](docs/organizacion-turnos.md)[m
+ [m
+ ### Historias de usuario en GitHub[m
+ [m
+[31m-- [HU001 - No sé qué trabajadores están disponibles ni qué tareas puede realizar cada uno](https://github.com/jgarmed8/TurnosSupermercado/issues/2)[m
+[31m-- [HU002 - No sé si el reparto de la jornada cumple todas las reglas](https://github.com/jgarmed8/TurnosSupermercado/issues/3)[m
+[31m-- [HU003 - Tengo que reorganizar la jornada cuando cambia la disponibilidad de un trabajador](https://github.com/jgarmed8/TurnosSupermercado/issues/4)[m
+[32m+[m[32m- [HU001 - Necesito tener clara la disponibilidad y qué tareas puede realizar cada trabajador](https://github.com/jgarmed8/TurnosSupermercado/issues/2)[m
+[32m+[m[32m- [HU002 - No sé si el reparto que he preparado es válido](https://github.com/jgarmed8/TurnosSupermercado/issues/3)[m
+ [m
+ ### Milestones[m
+ [m
+[31m-- [Milestone 0 - Paquete de jornadas](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)[m
+[31m-- [Milestone 1 - Comprobación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)[m
+[32m+[m[32m- [Milestone 0 - Paquete base para los turnos](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)[m
+[32m+[m[32m- [Milestone 1 - Paquete con validación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)[m
+[1mdiff --git a/docs/objetivos/objetivo-1/historias-usuarios.md b/docs/objetivos/objetivo-1/historias-usuarios.md[m
+[1mdeleted file mode 100644[m
+[1mindex e9a99bf..0000000[m
+[1m--- a/docs/objetivos/objetivo-1/historias-usuarios.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,27 +0,0 @@[m
+[31m-# Historias de usuario[m
+[31m-[m
+[31m-Las historias de usuario están creadas también como issues de GitHub con la etiqueta `user-stories`.[m
+[31m-[m
+[31m-## [HU001] No sé qué trabajadores están disponibles ni qué tareas puede realizar cada uno[m
+[31m-[m
+[31m-Como responsable del supermercado, cuando preparo una jornada necesito saber qué trabajadores están disponibles y qué tareas puede realizar cada uno.[m
+[31m-[m
+[31m-Sin esa información puedo preparar un reparto de tareas que después no se pueda cumplir.[m
+[31m-[m
+[31m-**Jornada relacionada:** [Jornada 1](user-journeys.md#jornada-1-organización-de-una-jornada)[m
+[31m-[m
+[31m-## [HU002] No sé si el reparto de la jornada cumple todas las reglas[m
+[31m-[m
+[31m-Como responsable del supermercado, cuando ya he repartido las tareas necesito saber si el reparto cumple las reglas de la jornada.[m
+[31m-[m
+[31m-Si hay algún trabajador que no está disponible, tiene dos tareas al mismo tiempo o una tarea necesaria no está cubierta, necesito detectarlo antes de dar por bueno el reparto.[m
+[31m-[m
+[31m-**Jornada relacionada:** [Jornada 1](user-journeys.md#jornada-1-organización-de-una-jornada)[m
+[31m-[m
+[31m-## [HU003] Tengo que reorganizar la jornada cuando cambia la disponibilidad de un trabajador[m
+[31m-[m
+[31m-Como responsable del supermercado, a veces un trabajador falta o cambia su disponibilidad después de haber organizado la jornada.[m
+[31m-[m
+[31m-En ese caso necesito volver a repartir las tareas con los trabajadores que siguen disponibles para que las tareas necesarias sigan cubiertas.[m
+[31m-[m
+[31m-**Jornada relacionada:** [Jornada 2](user-journeys.md#jornada-2-reorganización-por-un-cambio-de-disponibilidad)[m
+[1mdiff --git a/docs/objetivos/objetivo-1/milestones.md b/docs/objetivos/objetivo-1/milestones.md[m
+[1mdeleted file mode 100644[m
+[1mindex 65bf647..0000000[m
+[1m--- a/docs/objetivos/objetivo-1/milestones.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,39 +0,0 @@[m
+[31m-# Milestones[m
+[31m-[m
+[31m-## Milestone 0: Paquete de jornadas[m
+[31m-[m
+[31m-### Objetivo[m
+[31m-[m
+[31m-Representar en código una jornada real del supermercado, sin entrar todavía en cómo se van a repartir las tareas.[m
+[31m-[m
+[31m-### Qué se entrega[m
+[31m-[m
+[31m-Un paquete en Python que permita representar los trabajadores, su disponibilidad, las tareas que puede realizar cada uno, las tareas que hay que cubrir durante la jornada y las restricciones que afectan al reparto.[m
+[31m-[m
+[31m-### Cómo se comprueba[m
+[31m-[m
+[31m-Se usarán los casos reales descritos en las jornadas de usuario: una jornada normal y otra en la que haya recogida de palés.[m
+[31m-[m
+[31m-En ambos casos se tiene que poder representar toda la información necesaria sobre trabajadores, tareas y restricciones.[m
+[31m-[m
+[31m-En este milestone todavía no se realiza el reparto de tareas.[m
+[31m-[m
+[31m-## Milestone 1: Comprobación de repartos[m
+[31m-[m
+[31m-### Objetivo[m
+[31m-[m
+[31m-Comprobar si el reparto de tareas de una jornada cumple las reglas del supermercado.[m
+[31m-[m
+[31m-### Qué se entrega[m
+[31m-[m
+[31m-Se amplía el paquete en Python del milestone anterior para que, además de representar una jornada, permita revisar si un reparto de tareas cumple las reglas.[m
+[31m-[m
+[31m-También se añaden pruebas automáticas usando distintos casos del supermercado.[m
+[31m-[m
+[31m-### Cómo se comprueba[m
+[31m-[m
+[31m-Se probarán repartos correctos y otros que tengan algún problema.[m
+[31m-[m
+[31m-El paquete deberá distinguir cuándo un reparto es válido y cuándo no lo es.[m
+[31m-[m
+[31m-Entre los casos de prueba habrá trabajadores no disponibles, una persona con dos tareas al mismo tiempo, la caja sin cubrir o días en los que no se pueda realizar la recogida de palés.[m
+[1mdiff --git a/docs/objetivos/objetivo-1/personas.md b/docs/objetivos/objetivo-1/personas.md[m
+[1mdeleted file mode 100644[m
+[1mindex e1d9089..0000000[m
+[1m--- a/docs/objetivos/objetivo-1/personas.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,27 +0,0 @@[m
+[31m-# Personas[m
+[31m-[m
+[31m-## Juan Justo (60 años) - Responsable del supermercado[m
+[31m-[m
+[31m-Juan Justo es el responsable de organizar a los trabajadores y repartir las tareas del supermercado.[m
+[31m-[m
+[31m-Los trabajadores le comunican su disponibilidad, sus ausencias o si hay alguna tarea que no pueden realizar. Con esa información tiene que organizar la jornada y asegurarse de que las tareas necesarias queden cubiertas.[m
+[31m-[m
+[31m-Cuando cambia la disponibilidad de algún trabajador tiene que modificar el reparto.[m
+[31m-[m
+[31m-## Actores implicados[m
+[31m-[m
+[31m-En el supermercado trabajan:[m
+[31m-[m
+[31m-- Cristian (29 años)[m
+[31m-- Ana (28 años)[m
+[31m-- Miguel (24 años)[m
+[31m-- Manolo (31 años)[m
+[31m-- María Carmen (59 años)[m
+[31m-- Manolín (62 años)[m
+[31m-- Fran (24 años)[m
+[31m-- Francis (54 años)[m
+[31m-- Ángel (52 años)[m
+[31m-[m
+[31m-Son las personas a las que se asignan las tareas del supermercado, como caja, reposición o recogida de palés en Granada.[m
+[31m-[m
+[31m-Su disponibilidad y las tareas que puede realizar cada uno afectan al reparto de la jornada.[m
+[1mdiff --git a/docs/objetivos/objetivo-1/user-journeys.md b/docs/objetivos/objetivo-1/user-journeys.md[m
+[1mdeleted file mode 100644[m
+[1mindex ce153e2..0000000[m
+[1m--- a/docs/objetivos/objetivo-1/user-journeys.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,46 +0,0 @@[m
+[31m-# Jornadas de usuario[m
+[31m-[m
+[31m-## Jornada 1: Organización de una jornada[m
+[31m-[m
+[31m-Juan Justo organiza normalmente la jornada durante el fin de semana o antes de los días en los que hay que recoger palés.[m
+[31m-[m
+[31m-Los trabajadores le comunican su disponibilidad, sus ausencias y si hay alguna tarea que no pueden realizar.[m
+[31m-[m
+[31m-Con esa información:[m
+[31m-[m
+[31m-1. Comprueba qué trabajadores están disponibles.[m
+[31m-2. Revisa las tareas que hay que realizar ese día.[m
+[31m-3. Si hay recogida de palés, comprueba qué trabajadores pueden desplazarse a Granada.[m
+[31m-4. Reparte las tareas entre los trabajadores disponibles.[m
+[31m-5. Comprueba que nadie tenga dos tareas al mismo tiempo.[m
+[31m-6. Comprueba que la caja quede cubierta.[m
+[31m-7. Si corresponde, comprueba que se pueda realizar la recogida de palés.[m
+[31m-8. Reparte el resto de tareas, como la reposición.[m
+[31m-[m
+[31m-El dispositivo utilizado no es importante para este caso. Lo necesario es disponer de la información de los trabajadores y de las tareas.[m
+[31m-[m
+[31m-## Jornada 2: Reorganización por un cambio de disponibilidad[m
+[31m-[m
+[31m-Esta situación ocurre cuando un trabajador comunica una ausencia o cambia su disponibilidad después de haber organizado la jornada.[m
+[31m-[m
+[31m-Juan Justo:[m
+[31m-[m
+[31m-1. Recibe el cambio de disponibilidad.[m
+[31m-2. Comprueba qué tarea tenía asignada ese trabajador.[m
+[31m-3. Revisa qué trabajadores siguen disponibles.[m
+[31m-4. Reparte de nuevo las tareas afectadas.[m
+[31m-5. Comprueba que no haya asignaciones incompatibles.[m
+[31m-6. Comprueba que la caja siga cubierta y que se pueda realizar la recogida de palés cuando corresponda.[m
+[31m-7. Reparte el resto de tareas entre los trabajadores disponibles.[m
+[31m-[m
+[31m-## Reglas del reparto[m
+[31m-[m
+[31m-Para que un reparto sea válido:[m
+[31m-[m
+[31m-- Solo se pueden asignar tareas a trabajadores disponibles.[m
+[31m-- Un trabajador no puede realizar dos tareas al mismo tiempo.[m
+[31m-- Si un trabajador se desplaza a Granada, no puede realizar otra tarea en el supermercado durante ese tiempo.[m
+[31m-- La caja tiene que quedar cubierta.[m
+[31m-- Cuando haya recogida de palés, tienen que estar disponibles los trabajadores necesarios para realizarla. Normalmente van dos trabajadores.[m
+[31m-[m
+[31m-Si no se pueden cubrir la caja o la recogida de palés cuando corresponda, no habrá un reparto válido para esa jornada.[m

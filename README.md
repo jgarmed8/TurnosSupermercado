@@ -73,20 +73,16 @@ Tener el cuadrante accesible desde distintos dispositivos permitiría consultar 
 
 ## Planificación
 
-La planificación del objetivo 1 se encuentra en:
+La planificación del objetivo 1 está en:
 
-- [Personas](docs/objetivos/objetivo-1/personas.md)
-- [Jornadas de usuario](docs/objetivos/objetivo-1/user-journeys.md)
-- [Historias de usuario](docs/objetivos/objetivo-1/historias-usuarios.md)
-- [Milestones](docs/objetivos/objetivo-1/milestones.md)
+- [Organización de turnos del supermercado](docs/organizacion-turnos.md)
 
 ### Historias de usuario en GitHub
 
-- [HU001 - No sé qué trabajadores están disponibles ni qué tareas puede realizar cada uno](https://github.com/jgarmed8/TurnosSupermercado/issues/2)
-- [HU002 - No sé si el reparto de la jornada cumple todas las reglas](https://github.com/jgarmed8/TurnosSupermercado/issues/3)
-- [HU003 - Tengo que reorganizar la jornada cuando cambia la disponibilidad de un trabajador](https://github.com/jgarmed8/TurnosSupermercado/issues/4)
+- [HU001 - Necesito tener clara la disponibilidad y qué tareas puede realizar cada trabajador](https://github.com/jgarmed8/TurnosSupermercado/issues/2)
+- [HU002 - No sé si el reparto que he preparado es válido](https://github.com/jgarmed8/TurnosSupermercado/issues/3)
 
 ### Milestones
 
-- [Milestone 0 - Paquete de jornadas](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
-- [Milestone 1 - Comprobación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)
+- [Milestone 0 - Paquete base para los turnos](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
+- [Milestone 1 - Paquete con validación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)

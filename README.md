@@ -84,5 +84,5 @@ La planificación del objetivo 1 está en:
 
 ### Milestones
 
-- [Milestone 0 - modelo base para los turnos](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
-- [Milestone 1 - paquete con validación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)
+- [Milestone 0: modelo base para los turnos](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
+- [Milestone 1: paquete con validación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)

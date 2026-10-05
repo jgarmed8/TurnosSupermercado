@@ -74,18 +74,20 @@ El problema es poder saber si el reparto cumple las reglas del supermercado ante
 
 ## Primeras entregas del proyecto
 
-### Milestone 0: paquete base para los turnos
+### Milestone 0: modelo base para los turnos
 
 El primer milestone parte de la HU001.
 
-La idea es tener un paquete en Python con la información necesaria para representar una jornada del supermercado. Los problemas que vayan saliendo durante el modelado se irán tratando mediante issues.
+A partir de esta historia se aplicará el diseño dirigido por el dominio (DDD) para modelar el problema. Los problemas que vayan apareciendo durante ese proceso se plantearán como issues y se irán resolviendo dentro del milestone.
 
-Todavía no se comprobará si un reparto está bien o mal. Daremos el M0 por cerrado cuando todos los issues que hayamos sacado de la HU001 estén resueltos y podamos arrancar el M1 sobre este paquete tal cual.
+El resultado será un modelo que permita trabajar con la información necesaria de una jornada del supermercado. Por ahora no se comprobará si un reparto está bien o mal.
+
+Daremos el milestone 0 por terminado cuando los issues planteados estén resueltos y el modelo permita continuar con el siguiente milestone.
 
 ### Milestone 1: paquete con validación de repartos
 
 Este milestone utiliza lo hecho en el anterior y trabaja con la HU002.
 
-Sobre el paquete anterior se añadirá la lógica para comprobar si un reparto cumple las reglas del supermercado. Los problemas que aparezcan durante esa parte también se irán resolviendo mediante issues.
+Sobre el resultado anterior se añadirá la lógica para comprobar si un reparto cumple las reglas del supermercado. Los problemas que aparezcan durante esa parte también se irán resolviendo mediante issues.
 
 Además se añadirán pruebas automáticas para comprobar esa lógica. El milestone estará terminado cuando esas pruebas permitan comprobar el comportamiento implementado.

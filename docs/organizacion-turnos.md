@@ -102,18 +102,18 @@ Para Juan esto significa poder reaccionar ante una ausencia sin dejar las tareas
 
 ### Milestone 0: modelo
 
-El primer milestone parte de la HU001.
+El primer milestone parte de las HU001 y HU002.
 
-A partir de esta historia se aplicará DDD para modelar el problema. Los problemas que aparezcan durante ese proceso se plantearán como issues y servirán para guiar el modelado.
+A partir de estas historias se aplicará DDD para modelar el problema. Los problemas que aparezcan durante ese proceso se plantearán como issues y servirán para guiar el modelado.
 
 El milestone estará terminado cuando esos problemas estén resueltos y el modelo obtenido permita continuar con el siguiente milestone.
 
 ### Milestone 1: implementación verificable
 
-Este milestone parte del modelo obtenido a partir de la HU001 en el milestone anterior y trabaja con la HU002.
+Este milestone parte del modelo obtenido en el anterior a partir de las historias de usuario.
 
-A partir de esta historia se desarrollará la lógica de negocio que resulte necesaria. Los problemas que aparezcan durante este proceso se plantearán como issues.
+A partir de ese modelo se desarrollará la lógica de negocio que resulte necesaria. Los problemas que aparezcan durante este proceso se plantearán como issues.
 
 El resultado se comprobará mediante pruebas automáticas.
 
-El milestone estará terminado cuando los problemas planteados estén resueltos y las pruebas permitan comprobar automáticamente el comportamiento desarrollado a partir de la HU002.
+El milestone estará terminado cuando los problemas planteados estén resueltos y las pruebas permitan comprobar automáticamente el comportamiento derivado de las historias de usuario modeladas.

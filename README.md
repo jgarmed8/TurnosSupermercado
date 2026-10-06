@@ -2,17 +2,19 @@
 
 ## Problema
 
-El responsable de un supermercado tiene que organizar los turnos de los trabajadores y repartir las tareas que hay que hacer cada día.
+El responsable de un supermercado tiene que preparar los turnos de los trabajadores y repartir las tareas que hay que hacer cada día.
 
-Los lunes, martes, jueves y viernes suelen ir dos trabajadores a Granada a recoger palés. Durante ese tiempo quedan menos personas disponibles en la tienda y una de ellas tiene que estar pendiente de la caja.
+Una vez que los turnos están hechos, tiene que decidir qué tarea hace cada persona durante su horario.
 
-Si falta alguien o cambia algún turno, hay que volver a cuadrar parte del trabajo.
+Los lunes, martes, jueves y viernes suele haber recogida de palés en Granada. Normalmente van dos trabajadores y, mientras están fuera, hay menos gente disponible en la tienda.
+
+Si falta alguien o cambia su disponibilidad, puede ser necesario volver a repartir parte del trabajo.
 
 ## De dónde viene esto
 
-Este problema lo conozco porque mi padre es quien se encarga de organizar los turnos del supermercado. Yo también ayudo allí durante el verano, así que he visto cómo se reparte el trabajo y qué pasa cuando falta gente.
+Este problema lo conozco porque mi padre es quien se encarga de organizar el trabajo del supermercado. Yo también ayudo allí durante el verano, así que he visto cómo se hacen los turnos y qué pasa cuando falta gente.
 
-En el supermercado trabajan nueve personas. Los días que hay recogida de palés suelen ir dos trabajadores a Granada, por lo que durante ese tiempo hay menos personal disponible en la tienda.
+En el supermercado trabajan nueve personas. No todas trabajan al mismo tiempo ni pueden hacer siempre las mismas tareas.
 
 ## Cómo se organiza ahora
 
@@ -24,14 +26,16 @@ Cuando el cuadrante está hecho, se avisa a cada trabajador por WhatsApp. Si hay
 
 Un martes faltó uno de los trabajadores y ese mismo día ya había dos personas que tenían que ir a Granada a recoger palés.
 
-Como quedaba menos gente en la tienda, hubo que cambiar a otro trabajador de tarea para que se quedara en caja. Ese día tuvo que dejar la reposición para quedarse cubriendo la caja.
+Durante esas horas había menos gente en la tienda de la que se había tenido en cuenta al preparar el reparto.
+
+Hubo que cambiar a otro trabajador de tarea para que se quedara en caja y la reposición se dejó para más tarde.
 
 ## Datos disponibles
 
-Para organizar los turnos se dispone de:
+Para organizar el trabajo se dispone de:
 
 - los trabajadores del supermercado;
-- los turnos de cada uno;
+- los turnos y horarios de cada uno;
 - su disponibilidad;
 - las tareas que hay que hacer;
 - los días de recogida de palés;
@@ -41,19 +45,21 @@ Los turnos actuales están guardados en el Excel que utiliza el responsable.
 
 ## Qué hay que tener en cuenta
 
-Siempre tiene que quedar alguien pendiente de la caja.
+La caja tiene que estar atendida durante el horario de apertura.
 
-Para recoger los palés suelen ir dos trabajadores y, mientras están en Granada, no se puede contar con ellos para las tareas de la tienda.
+Cuando hay recogida de palés tienen que estar disponibles los trabajadores necesarios para realizarla. Normalmente van dos y, mientras están en Granada, no se puede contar con ellos para las tareas de la tienda.
 
-Si falta alguien, como ocurrió ese martes, puede ser necesario cambiar el reparto que ya estaba hecho.
+Si falta alguien puede ser necesario cambiar el reparto que ya estaba hecho.
+
+La reposición puede dejarse para más tarde si no hay suficiente gente para hacerlo todo.
 
 ## Qué hace falta procesar
 
-Para hacer el reparto hay que analizar qué trabajadores están disponibles y qué tareas hay que cubrir en cada momento.
+Para hacer el reparto hay que tener en cuenta qué trabajadores están disponibles, sus horarios y las tareas que hay que hacer.
 
-También hay que calcular con cuántas personas se puede contar en la tienda cuando alguien falta o cuando dos trabajadores se van a Granada, y validar que siga habiendo alguien pendiente de la caja.
+También hay que comprobar qué personas pueden hacer cada tarea y quién estará fuera de la tienda cuando haya recogida de palés.
 
-Si alguna de estas condiciones cambia, hay que generar un nuevo reparto de tareas teniendo en cuenta quién sigue disponible y qué tareas quedan por hacer.
+Si cambia la disponibilidad de alguien, hay que volver a repartir las tareas que se hayan quedado sin cubrir.
 
 ## Por qué hace falta que esté en la nube
 
@@ -75,14 +81,14 @@ Tener el cuadrante accesible desde distintos dispositivos permitiría consultar 
 
 La planificación del objetivo 1 está en:
 
-- [Organización de turnos del supermercado](docs/organizacion-turnos.md)
+- [Organización de tareas en el supermercado](docs/organizacion-turnos.md)
 
 ### Historias de usuario en GitHub
 
-- [HU001 - Necesito tener clara la disponibilidad y qué tareas puede realizar cada trabajador](https://github.com/jgarmed8/TurnosSupermercado/issues/2)
-- [HU002 - No sé si el reparto que he preparado es válido](https://github.com/jgarmed8/TurnosSupermercado/issues/3)
+- [HU001 - Cubrir las tareas necesarias con los trabajadores disponibles](https://github.com/jgarmed8/TurnosSupermercado/issues/2)
+- [HU002 - Reorganizar el reparto cuando falta un trabajador](https://github.com/jgarmed8/TurnosSupermercado/issues/3)
 
 ### Milestones
 
-- [Milestone 0: modelo base para los turnos](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
-- [Milestone 1: paquete con validación de repartos](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)
+- [Milestone 0: paquete base para representar el problema](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
+- [Milestone 1: paquete con la lógica para repartir las tareas](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)

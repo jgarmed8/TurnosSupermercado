@@ -1,93 +1,131 @@
-# Organización de turnos del supermercado
+# Organización de tareas en el supermercado
 
 ## Situación actual
 
-Juan Justo es quien se encarga de organizar el trabajo del supermercado. Para preparar el reparto necesita saber qué trabajadores van a estar disponibles, qué tareas hay que hacer ese día y cuáles puede realizar cada uno.
+Juan Justo es quien se encarga de preparar los turnos y organizar el trabajo del supermercado.
 
-Los trabajadores le avisan cuando no pueden ir, cuando cambia su disponibilidad o cuando hay alguna tarea que no pueden realizar. Con esa información Juan organiza el trabajo del día.
+Para este problema se parte de que los turnos y horarios ya están hechos. A partir de ahí Juan decide qué tarea hace cada trabajador durante su horario.
 
-En el supermercado trabajan nueve personas. No todas tienen siempre la misma disponibilidad ni pueden hacer las mismas tareas, así que el reparto depende bastante de quién pueda trabajar ese día.
+Para preparar el reparto necesita saber quién está disponible, qué tareas hay que hacer, a qué hora hacen falta y cuáles puede hacer cada persona.
 
-Además, un reparto que ya estaba hecho puede dejar de servir si después falta alguien o cambia su disponibilidad.
+En el supermercado trabajan nueve personas, aunque no están las nueve trabajando a la vez y tampoco todas pueden hacer siempre las mismas tareas.
+
+Cuando se habla de un hueco se refiere simplemente a una tarea que necesita que haya una persona haciéndola durante un horario concreto.
+
+Hay tareas que no se pueden dejar para después. La caja tiene que estar atendida durante el horario de apertura y, cuando toca recoger palés, tiene que haber trabajadores disponibles para ir a Granada. Otras tareas, como la reposición, se pueden dejar para más tarde si falta gente.
+
+Por eso no basta con mirar cuántos trabajadores hay en total. También importa quién está trabajando a esa hora y qué tareas puede hacer cada persona.
 
 ## Cómo se suele organizar el trabajo
 
 ### Viaje de usuario 1: preparar el reparto
 
-Juan suele preparar el reparto durante el fin de semana o antes de los días en los que hay que recoger palés en Granada.
+Juan suele preparar el reparto durante el fin de semana o antes de los días en los que toca recoger palés.
 
-Antes de empezar necesita saber:
+Antes de empezar comprueba:
 
 - Qué trabajadores están disponibles.
+- Qué horario tiene cada uno.
 - Qué tareas hay que hacer.
-- Qué tareas puede realizar cada trabajador.
+- A qué hora hay que hacerlas.
+- Qué tareas puede hacer cada trabajador.
 - Si ese día hay recogida de palés.
-- Qué restricciones hay que respetar.
 
-Primero mira quién puede trabajar y qué tareas hay pendientes. Si ese día hay recogida de palés, también tiene que comprobar quién puede desplazarse a Granada.
+Después va repartiendo el trabajo.
 
-Después va repartiendo las tareas. Tiene que asegurarse de que una misma persona no tenga dos tareas al mismo tiempo, que la caja quede cubierta y que, cuando corresponda, haya gente disponible para recoger los palés.
+Tiene que evitar que una misma persona tenga dos tareas a la vez, asegurarse de que la caja siga atendida y tener en cuenta que, cuando toca recoger palés, los trabajadores que van a Granada no están disponibles en la tienda durante esas horas.
 
-Cuando esas tareas están cubiertas puede repartir el resto del trabajo, como reponer.
+Cuando lo necesario está cubierto puede repartir otras tareas, como la reposición.
 
-El dispositivo desde el que se consulte la información no cambia realmente este proceso. Lo importante es poder consultar los datos de los trabajadores, las tareas y las restricciones del día.
+El dispositivo desde el que se consulte la información no cambia realmente este proceso. Lo importante es poder consultar los trabajadores, sus horarios y las tareas cuando haga falta.
 
 ### Viaje de usuario 2: cambiar un reparto que ya estaba hecho
 
-También puede pasar que Juan ya tenga el reparto preparado y después un trabajador avise de que no puede ir o cambie su disponibilidad.
+También puede pasar que Juan ya tenga el reparto preparado y después un trabajador avise de que no puede ir.
 
-En ese caso primero tiene que mirar qué tarea tenía esa persona. Después comprueba qué trabajadores siguen disponibles y vuelve a repartir las tareas que hayan quedado sin cubrir.
+Lo primero que hace es mirar qué tareas tenía esa persona y a qué horas tenía que hacerlas.
 
-No siempre basta con cambiar una persona por otra. El nuevo reparto tiene que seguir cumpliendo las mismas reglas que el anterior.
+Después comprueba quién sigue disponible y qué puede hacer cada trabajador para volver a repartir las tareas que se hayan quedado sin cubrir.
 
-Por ejemplo, si la persona que falta estaba en caja, hay que conseguir que otra persona pueda cubrirla. Si ese día hay recogida de palés, también tiene que seguir habiendo trabajadores disponibles para ir a Granada.
+No siempre basta con sustituir una persona por otra, porque el nuevo reparto tiene que seguir cumpliendo las mismas reglas.
 
-## Reglas que afectan al reparto
+Un caso que ocurrió fue un martes en el que dos trabajadores ya tenían que ir a Granada a recoger palés y después otro trabajador avisó de que no podía ir.
 
-Para que un reparto pueda darse por bueno se tienen que cumplir varias condiciones:
+Durante esas horas había una persona menos en la tienda de la que Juan había tenido en cuenta cuando preparó el reparto. Los trabajadores que iban a Granada tenían que seguir haciendo esa tarea y la caja también tenía que seguir atendida.
 
-- Una tarea solo se puede asignar a un trabajador que esté disponible.
-- Una persona no puede realizar dos tareas al mismo tiempo.
-- Si un trabajador se desplaza a Granada, durante ese tiempo no puede estar realizando otra tarea en el supermercado.
-- La caja tiene que quedar cubierta.
-- Cuando haya recogida de palés tiene que haber personal disponible para realizarla; hacen falta dos trabajadores.
+Por eso hubo que cambiar de tarea a uno de los trabajadores para que se quedara en caja. La reposición se dejó para más tarde.
 
-Estas reglas son importantes porque puede parecer que un reparto está completo pero en realidad no se puede llevar a cabo.
+Este caso muestra que un reparto que al principio sirve puede dejar de hacerlo cuando falta alguien.
+
+## Reglas del reparto
+
+Para hacer el reparto hay que tener en cuenta varias cosas:
+
+- Una tarea solo se puede dar a alguien que esté disponible a esa hora.
+- Una persona no puede hacer dos tareas al mismo tiempo.
+- Si alguien está en Granada, durante esas horas no puede hacer tareas en la tienda.
+- La caja tiene que estar atendida durante el horario de apertura.
+- Cuando hay recogida de palés tienen que estar disponibles los trabajadores necesarios para hacerla. Normalmente van dos.
+- La reposición se puede dejar para más tarde si falta gente.
 
 ## Problemas que se quieren resolver
 
-### [HU001] Necesito tener clara la disponibilidad y qué tareas puede realizar cada trabajador
+### [HU001] Cubrir las tareas necesarias con los trabajadores disponibles
 
-Cuando Juan empieza a organizar el día necesita tener actualizada la disponibilidad de los trabajadores y saber qué tareas puede realizar cada uno.
+Cuando Juan prepara el trabajo ya conoce los horarios, quién está disponible, qué tareas hay que hacer y cuáles puede hacer cada trabajador.
 
-Si esa información no está clara puede contar con alguien que finalmente no esté disponible o asignarle una tarea que no pueda realizar.
+El problema es decidir quién hace cada tarea para que las que no se pueden dejar para después estén cubiertas y se respeten las reglas del supermercado.
 
-Este es el primer problema que se va a trabajar, porque antes de comprobar un reparto hace falta tener la información correcta.
+Por ejemplo, cuando hay recogida de palés hay trabajadores que durante unas horas están fuera de la tienda. Juan tiene que organizar a los que quedan para que la caja y las demás tareas necesarias sigan atendidas.
 
-### [HU002] No sé si el reparto que he preparado es válido
+El problema está resuelto cuando todas las tareas necesarias tienen a alguien que pueda hacerlas.
 
-Aunque Juan tenga toda la información necesaria, al hacer el reparto puede haber errores.
+Si con las personas disponibles no se puede cubrir todo lo necesario, no hay una solución para ese turno.
 
-Una misma persona puede acabar con dos tareas que coinciden, puede quedar una tarea necesaria sin cubrir o puede haberse contado con alguien que no estaba disponible en ese momento.
+Para Juan esto significa poder dejar organizado el día sabiendo que lo importante está atendido.
 
-El problema es poder saber si el reparto cumple las reglas del supermercado antes de darlo por bueno.
+### [HU002] Reorganizar el reparto cuando falta un trabajador
+
+Puede pasar que Juan ya tenga el reparto preparado y después una persona diga que no puede ir.
+
+Las tareas que tenía pueden quedarse sin cubrir, así que hay que volver a repartirlas entre los trabajadores que siguen disponibles.
+
+El caso del martes explicado anteriormente es un ejemplo de este problema.
+
+El problema está resuelto cuando las tareas necesarias vuelven a tener a alguien que pueda hacerlas.
+
+Si con las personas que quedan no se puede cubrir todo lo necesario, no hay una solución para esa situación.
+
+Para Juan esto significa poder reaccionar ante una ausencia sin dejar las tareas importantes sin atender.
 
 ## Primeras entregas del proyecto
 
-### Milestone 0: modelo base para los turnos
+### Milestone 0: paquete base para representar el problema
 
 El primer milestone parte de la HU001.
 
-A partir de esta historia se aplicará el diseño dirigido por el dominio (DDD) para modelar el problema. Los problemas que vayan apareciendo durante ese proceso se plantearán como issues y se irán resolviendo dentro del milestone.
+Antes de escribir código se analizarán las historias de usuario. Los problemas que vayan apareciendo durante ese análisis se crearán como issues.
 
-El resultado será un modelo que permita trabajar con la información necesaria de una jornada del supermercado. Por ahora no se comprobará si un reparto está bien o mal.
+Para hacerlo se seguirá DDD, intentando entender primero bien el problema antes de decidir cómo llevarlo al código.
 
-Daremos el milestone 0 por terminado cuando los issues planteados estén resueltos y el modelo permita continuar con el siguiente milestone.
+Durante este proceso también se elegirá el lenguaje de programación.
 
-### Milestone 1: paquete con validación de repartos
+El producto será una primera versión del código del proyecto organizada dentro del repositorio según las buenas prácticas del lenguaje elegido.
 
-Este milestone utiliza lo hecho en el anterior y trabaja con la HU002.
+Todavía no tendrá la lógica para repartir las tareas. La idea es dejar preparada la parte necesaria para poder trabajar con esa lógica en el siguiente milestone.
 
-Sobre el resultado anterior se añadirá la lógica para comprobar si un reparto cumple las reglas del supermercado. Los problemas que aparezcan durante esa parte también se irán resolviendo mediante issues.
+También se añadirá `iv.yaml`. En la clave `entidad` se pondrá la ruta del fichero donde esté programada la entidad desarrollada en este milestone.
 
-Además se añadirán pruebas automáticas para comprobar esa lógica. El milestone estará terminado cuando esas pruebas permitan comprobar el comportamiento implementado.
+El milestone estará terminado cuando los issues de esta parte estén resueltos, el código esté bien organizado, pueda cargarse o compilarse sin errores y sirva como base para empezar el siguiente milestone.
+
+### Milestone 1: paquete con la lógica para repartir las tareas
+
+Este milestone continúa a partir del anterior.
+
+El producto será una nueva versión del mismo paquete, añadiendo la lógica necesaria para trabajar con el reparto de tareas.
+
+Los problemas que vayan apareciendo también se crearán como issues antes de resolverlos en el código.
+
+Se añadirán pruebas automáticas con casos normales, casos en los que no se puedan cubrir todas las tareas necesarias y casos en los que falte un trabajador después de tener el reparto preparado.
+
+El milestone estará terminado cuando los issues estén resueltos y las pruebas automáticas permitan comprobar que la lógica funciona correctamente en esos casos.

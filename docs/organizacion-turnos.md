@@ -100,32 +100,20 @@ Para Juan esto significa poder reaccionar ante una ausencia sin dejar las tareas
 
 ## Primeras entregas del proyecto
 
-### Milestone 0: paquete base para representar el problema
+### Milestone 0: modelo
 
 El primer milestone parte de la HU001.
 
-Antes de escribir código se analizarán las historias de usuario. Los problemas que vayan apareciendo durante ese análisis se crearán como issues.
+A partir de esta historia se aplicará DDD para modelar el problema. Los problemas que aparezcan durante ese proceso se plantearán como issues y servirán para guiar el modelado.
 
-Para hacerlo se seguirá DDD, intentando entender primero bien el problema antes de decidir cómo llevarlo al código.
+El milestone estará terminado cuando esos problemas estén resueltos y el modelo obtenido permita continuar con el siguiente milestone.
 
-Durante este proceso también se elegirá el lenguaje de programación.
+### Milestone 1: implementación verificable
 
-El producto será una primera versión del código del proyecto organizada dentro del repositorio según las buenas prácticas del lenguaje elegido.
+Este milestone parte del modelo obtenido a partir de la HU001 en el milestone anterior y trabaja con la HU002.
 
-Todavía no tendrá la lógica para repartir las tareas. La idea es dejar preparada la parte necesaria para poder trabajar con esa lógica en el siguiente milestone.
+A partir de esta historia se desarrollará la lógica de negocio que resulte necesaria. Los problemas que aparezcan durante este proceso se plantearán como issues.
 
-También se añadirá `iv.yaml`. En la clave `entidad` se pondrá la ruta del fichero donde esté programada la entidad desarrollada en este milestone.
+El resultado se comprobará mediante pruebas automáticas.
 
-El milestone estará terminado cuando los issues de esta parte estén resueltos, el código esté bien organizado, pueda cargarse o compilarse sin errores y sirva como base para empezar el siguiente milestone.
-
-### Milestone 1: paquete con la lógica para repartir las tareas
-
-Este milestone continúa a partir del anterior.
-
-El producto será una nueva versión del mismo paquete, añadiendo la lógica necesaria para trabajar con el reparto de tareas.
-
-Los problemas que vayan apareciendo también se crearán como issues antes de resolverlos en el código.
-
-Se añadirán pruebas automáticas con casos normales, casos en los que no se puedan cubrir todas las tareas necesarias y casos en los que falte un trabajador después de tener el reparto preparado.
-
-El milestone estará terminado cuando los issues estén resueltos y las pruebas automáticas permitan comprobar que la lógica funciona correctamente en esos casos.
+El milestone estará terminado cuando los problemas planteados estén resueltos y las pruebas permitan comprobar automáticamente el comportamiento desarrollado a partir de la HU002.

@@ -69,6 +69,10 @@ Esto hace que la planificación dependa de un único ordenador. Para consultar o
 
 Tener el cuadrante accesible desde distintos dispositivos permitiría consultar y modificar la misma planificación sin depender de ese único ordenador.
 
+## Elección de lenguaje 
+
+Se ha elegido Go como lenguaje de programación. Para indagar más, consultar el Issue #6. 
+
 ## Juego de rol
 
 [Tarjeta utilizada en el juego de rol](img/tarjeta-cliente.png)

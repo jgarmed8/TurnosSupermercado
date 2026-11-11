@@ -56,3 +56,11 @@ Al final me quedo con Make. En las pruebas ha tardado prácticamente lo mismo qu
 Lo que me hace elegir Make es que ya estaba instalado en mi Ubuntu y también venía en la imagen de Go que probé. Para utilizar Just tuve que instalarlo aparte. Task y Mage también necesitaron instalación y tardaron más en ejecutar la comprobación.
 
 Para las tareas que necesito ahora no veo necesario añadir otra herramienta. Esto no significa que Make venga instalado siempre, pero en los entornos que he comprobado puedo utilizarlo directamente.
+
+## Comprobación de la tarea
+
+He ejecutado `make check` desde la raíz del repositorio y ha terminado con código de salida 0.
+
+También he probado la tarea con un archivo Go incorrecto en una carpeta temporal. En ese caso ha detectado el error y ha terminado con un código distinto de 0.
+
+![Ejecución de make check](capturas/check.png)

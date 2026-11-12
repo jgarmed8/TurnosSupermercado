@@ -10,7 +10,9 @@ Después del objetivo 2 tengo seis archivos Go en `internal/turnos`. En el issue
 
 ## Criterios para elegir el gestor de tareas
 
-Me he fijado en dos cosas:
+También he revisado el tema de los estándares. `make` es una utilidad definida por POSIX, aunque eso no significa que sea el gestor de tareas de Go. Para las dependencias ya utilizo Go Modules.
+
+Para comparar las alternativas me he fijado en dos cosas:
 
 - **Tiempo de ejecución:** lo que tarda cada gestor en lanzar la misma comprobación de sintaxis sobre los archivos del modelo.
 - **Instalación adicional:** si tengo que instalar el gestor aparte de Go cuando preparo el entorno. Para comprobarlo he tenido en cuenta mi Ubuntu y una imagen de Go que he probado.
@@ -22,6 +24,8 @@ He probado Make, Just, Task y Mage. Preparé los archivos de tareas en `~/IV-pru
 ## Tiempo de ejecución
 
 He utilizado Hyperfine en mi Ubuntu, con Go 1.27.4, haciendo tres ejecuciones de calentamiento y treinta mediciones por comando. También medí `gofmt` sin gestor para tener una referencia.
+
+En `go.mod` aparece Go 1.26.8, que es la versión mínima requerida por el proyecto. Las medidas las hice con Go 1.27.4 porque es la versión que tengo instalada en mi equipo. Utilicé esa misma versión para todas las herramientas, así que la comparación corresponde a ese entorno. No he repetido las mediciones con Go 1.26.8.
 
 - Sin gestor: **112,0 ± 5,6 ms**.
 - Make: **113,2 ± 4,7 ms**.
@@ -43,7 +47,7 @@ De esas instalaciones medí los tiempos de Task (**5,124 s**) y Mage (**6,544 s*
 
 ![Instalación de Mage](capturas/instalacion-mage.png)
 
-No medí el tiempo de instalación de Just y Make ya estaba disponible. Además, instalé Task y Mage de formas distintas, así que esos segundos no permiten comparar la instalación de las cuatro herramientas en las mismas condiciones.
+No medí cuánto tardó Just en instalarse y Make ya estaba instalado. Por eso, para elegir entre Make y Just me fijé en si necesitaba instalar otra herramienta, no en los segundos que tardaba la instalación. Los tiempos de Task y Mage los dejo como resultados de esas pruebas, pero no sirven para comparar directamente las cuatro instalaciones porque se hicieron de formas distintas.
 
 También comprobé la imagen `golang:1.27.4-bookworm`: traía Make instalado, pero no Just, Task ni Mage. Esta observación corresponde a esa imagen, no a todos los entornos donde se pueda utilizar Go.
 

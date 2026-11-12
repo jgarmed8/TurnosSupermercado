@@ -92,3 +92,21 @@ La planificación del objetivo 1 está en:
 
 - [Milestone 0: modelo](https://github.com/jgarmed8/TurnosSupermercado/milestone/1)
 - [Milestone 1: implementación verificable](https://github.com/jgarmed8/TurnosSupermercado/milestone/2)
+
+## Automatización de tareas
+
+Para descargar las dependencias del proyecto utilizo Make. Desde la raíz del repositorio puedo ejecutar:
+
+```bash
+make install
+```
+
+Para comprobar la sintaxis de los archivos Go:
+
+```bash
+make check
+```
+
+Esta comprobación no modifica los archivos ni ejecuta la lógica de los turnos.
+
+Las pruebas que hice para elegir el gestor están en [la documentación de automatización](docs/automatizacion.md).

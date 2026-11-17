@@ -6,7 +6,7 @@ El proyecto está hecho en Go y ya tiene `go.mod`. Para gestionar las dependenci
 
 ## Qué necesito automatizar
 
-Después del objetivo 2 tengo seis archivos Go en `internal/turnos`. En el issue #23 planteé preparar una tarea para comprobar su sintaxis desde la raíz del proyecto, sin cambiar los archivos ni ejecutar la lógica de los turnos. También necesito una tarea para descargar las dependencias cuando las haya.
+Después del objetivo 2 tengo seis archivos Go en `internal/turnos`. En el issue #23 planteé preparar una tarea para comprobar que los archivos Go del proyecto compilan correctamente, sin ejecutar la lógica de los turnos. También necesito una tarea para descargar las dependencias cuando las haya.
 
 ## Criterios para elegir el gestor de tareas
 
@@ -14,12 +14,12 @@ También he revisado el tema de los estándares. `make` es una utilidad definida
 
 Para comparar las alternativas me he fijado en dos cosas:
 
-- **Tiempo de ejecución:** lo que tarda cada gestor en lanzar la misma comprobación de sintaxis sobre los archivos del modelo.
+- **Tiempo de ejecución:** lo que tarda cada gestor en lanzar la misma comprobación sobre los paquetes Go del proyecto.
 - **Instalación adicional:** si tengo que instalar el gestor aparte de Go cuando preparo el entorno. Para comprobarlo he tenido en cuenta mi Ubuntu y una imagen de Go que he probado.
 
 ## Herramientas probadas
 
-He probado Make, Just, Task y Mage. Preparé los archivos de tareas en `~/IV-pruebas-o3`, fuera del repositorio, para no dejar configuraciones que después no voy a utilizar. Los cuatro consiguieron lanzar `gofmt -e -l` sobre los mismos seis archivos del modelo.
+He probado Make, Just, Task y Mage. Primero ejecuté la misma comprobación con `gofmt` en las cuatro herramientas. Después repetí las medidas utilizando `go build ./...`, que es lo que utiliza ahora la tarea `check`.
 
 ## Tiempo de ejecución
 
@@ -81,8 +81,10 @@ Make no tiene por qué venir instalado en todos los entornos, pero para los que 
 
 ## Comprobación de la tarea
 
-He ejecutado `make check` desde la raíz del repositorio y ha terminado con código de salida 0.
+He ejecutado `make check` desde la raíz del proyecto y ha terminado con código de salida 0.
 
-También he probado la tarea con un archivo Go incorrecto en una carpeta temporal. En ese caso ha detectado el error y ha terminado con un código distinto de 0.
+También he probado la tarea con un archivo Go que devuelve un `string` cuando la función debería devolver un `int`. Hice la prueba en una carpeta temporal para no modificar el modelo. En ese caso `make check` ha detectado el error de tipos y ha terminado con código distinto de 0.
 
-![Ejecución de make check](capturas/check.png)
+La tarea utiliza `go build ./...` para comprobar que los paquetes compilan. No ejecuta los tests ni utiliza `go vet`.
+
+![Comprobación de compilación](capturas/check-build.png)

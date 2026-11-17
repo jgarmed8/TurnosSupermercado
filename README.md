@@ -101,12 +101,12 @@ Para descargar las dependencias del proyecto utilizo Make. Desde la raíz del re
 make install
 ```
 
-Para comprobar la sintaxis de los archivos Go:
+Para comprobar que los paquetes Go del proyecto compilan:
 
 ```bash
 make check
 ```
 
-Esta comprobación no modifica los archivos ni ejecuta la lógica de los turnos.
+Esta tarea no ejecuta tests ni la lógica de los turnos.
 
 Las pruebas que hice para elegir el gestor están en [la documentación de automatización](docs/automatizacion.md).

@@ -71,11 +71,13 @@ También comprobé la imagen `golang:1.27.4-bookworm`: traía Make instalado, pe
 
 ## Elección
 
-Al final me quedo con Make. En las pruebas ha tardado prácticamente lo mismo que Just: 113,2 ms frente a 112,5 ms. La diferencia es muy pequeña, así que por tiempo de ejecución no tengo un motivo claro para preferir uno de los dos.
+Después de repetir las pruebas con `go build ./...`, sigo eligiendo Make.
 
-Lo que me hace elegir Make es que ya estaba instalado en mi Ubuntu y también venía en la imagen de Go que probé. Para utilizar Just tuve que instalarlo aparte. Task y Mage también necesitaron instalación y tardaron más en ejecutar la comprobación.
+En la nueva comparación, Make ha tardado 146,8 ms y Just 146,3 ms. La diferencia de 0,5 ms es muy pequeña y no me parece suficiente para elegir uno por encima del otro. Task ha tardado 192,6 ms y Mage 528,3 ms.
 
-Para las tareas que necesito ahora no veo necesario añadir otra herramienta. Esto no significa que Make venga instalado siempre, pero en los entornos que he comprobado puedo utilizarlo directamente.
+Me quedo con Make porque ya estaba instalado en mi Ubuntu y también venía en la imagen de Go que comprobé. Además, es una herramienta definida por POSIX. Para utilizar Just tuve que instalarlo aparte.
+
+Make no tiene por qué venir instalado en todos los entornos, pero para los que he comprobado no necesito añadir otra herramienta. Con estos resultados, mantengo la elección inicial.
 
 ## Comprobación de la tarea
 

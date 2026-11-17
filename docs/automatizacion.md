@@ -37,6 +37,22 @@ En `go.mod` aparece Go 1.26.8, que es la versión mínima requerida por el proye
 
 Make y Just han tardado prácticamente lo mismo que el comando directo. Task ha tardado más y Mage ha sido el más lento en esta prueba. Estos resultados son de mi equipo y de esta tarea concreta.
 
+### Comprobación de compilación
+
+Después de cambiar la tarea `check` para comprobar también los errores de nombres y tipos, he repetido las medidas utilizando `go build ./...`.
+
+He vuelto a usar Hyperfine, con tres ejecuciones de calentamiento y treinta mediciones por comando. Todas las herramientas han ejecutado la misma comprobación sobre los paquetes del proyecto.
+
+Los resultados han sido:
+
+- Sin gestor: **145,7 ± 6,9 ms**.
+- Make: **146,8 ± 4,0 ms**.
+- Just: **146,3 ± 5,4 ms**.
+- Task: **192,6 ± 5,6 ms**.
+- Mage: **528,3 ± 9,0 ms**.
+
+![Mediciones de compilación](capturas/ejecucion-build.png)
+
 ## Instalación y disponibilidad
 
 En mi Ubuntu Make ya estaba instalado. Tuve que instalar Just con `apt`, Task con su instalador y Mage con `go install`.

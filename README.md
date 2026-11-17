@@ -95,7 +95,7 @@ La planificación del objetivo 1 está en:
 
 ## Automatización de tareas
 
-Para descargar las dependencias del proyecto utilizo Make. Desde la raíz del repositorio puedo ejecutar:
+Para descargar las dependencias ejecuto `make install` desde la raíz del proyecto. Esta tarea utiliza `go mod download`.
 
 ```bash
 make install

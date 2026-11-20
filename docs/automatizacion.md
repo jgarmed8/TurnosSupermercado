@@ -12,7 +12,7 @@ Al principio utilicé `gofmt`, pero después cambié la tarea para comprobar que
 
 ## Criterios para elegir el gestor
 
-He comparado Make, Just, Task y Mage teniendo en cuenta tres aspectos:
+He comparado Make, Just, Task, Mage y XC teniendo en cuenta tres aspectos:
 
 - **Estándares:** `make` está definido por POSIX, así que lo he tenido en cuenta al estudiar las alternativas.
 - **Tiempo de ejecución:** cuánto tarda cada herramienta en ejecutar la misma comprobación.
@@ -74,6 +74,26 @@ No cronometré la instalación inicial de Just en mi portátil. Tampoco he utili
 Además, comprobé las herramientas disponibles en `golang:1.27.4-bookworm`. Esa imagen ya traía Make, mientras que Just, Task y Mage no estaban instalados.
 
 ![Herramientas disponibles en la imagen de Go](capturas/entorno-go.png)
+
+## Prueba de XC
+
+También he probado XC v0.9.0, que permite definir tareas en un archivo Markdown.
+
+Lo instalé con `go install` en mi Ubuntu. La instalación tardó **6,030 s**.
+
+![Instalación de XC](capturas/xc-instalacion.png)
+
+Para probarlo definí una tarea `check` que ejecuta `go build ./...`, igual que las otras herramientas.
+
+Repetí la comparación con Hyperfine, utilizando tres ejecuciones de calentamiento y treinta mediciones por comando.
+
+Los resultados fueron:
+
+- Sin gestor: **139,2 ± 3,9 ms**.
+- Make: **138,9 ± 4,3 ms**.
+- XC: **141,3 ± 4,3 ms**.
+
+![Comparación de XC con Make](capturas/xc-ejecucion.png)
 
 ## Elección
 

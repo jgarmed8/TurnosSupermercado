@@ -105,6 +105,10 @@ Make está definido por POSIX y ya estaba instalado tanto en mi Ubuntu como en l
 
 Para las tareas que necesito ahora, Make me sirve sin tener que añadir otra herramienta.
 
+También probé XC con `go build ./...`. En esta prueba, Make tardó **138,9 ± 4,3 ms** y XC **141,3 ± 4,3 ms**. La diferencia es pequeña y no veo una ventaja clara de uno sobre otro en el tiempo de ejecución.
+
+XC tardó **6,030 s** en instalarse, mientras que Make ya estaba instalado en mi equipo. Por eso sigo eligiendo Make.
+
 ## Comprobación de la tarea
 
 He añadido dos tareas al `Makefile`:

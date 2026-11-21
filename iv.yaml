@@ -1,2 +1,6 @@
 lenguaje: go
 entidad: internal/turnos/repartos.go
+
+automatizar:
+  fichero: Makefile
+  orden: make

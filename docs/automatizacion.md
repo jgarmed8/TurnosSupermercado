@@ -65,9 +65,9 @@ XC v0.9.0 lo descargué como binario para Linux desde GitHub Releases, sin compi
 
 Me quedo con Make.
 
-Make, Just y XC tardaron alrededor de 115 ms, muy cerca de los 112 ms de ejecutar `gofmt` directamente. Task y Mage tardaron bastante más.
+Make tardó 114,2 ms, Just 116,6 ms y XC 112,2 ms, frente a los 109,4 ms de ejecutar `gofmt` directamente. Task y Mage tardaron bastante más.
 
-Make ya estaba instalado en mi Ubuntu y en la imagen de Go que comprobé, así que prefiero mantenerlo sin instalar otro gestor para las tareas actuales.
+Aunque Mage y XC se pueden descargar ya compilados, Make estaba instalado tanto en mi Ubuntu como en la imagen de Go que comprobé. Por eso prefiero mantenerlo para las tareas actuales.
 
 ## Comprobación de la tarea
 

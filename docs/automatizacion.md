@@ -29,23 +29,23 @@ Para comparar las cinco herramientas utilicé `gofmt -e -l .`, que comprueba la 
 
 Los resultados fueron:
 
-- Sin gestor: **112,1 ± 4,4 ms**.
-- Make: **114,9 ± 4,3 ms**.
-- Just: **115,6 ± 4,1 ms**.
-- Task: **161,1 ± 4,2 ms**.
-- Mage: **499,2 ± 11,2 ms**.
-- XC: **115,5 ± 4,4 ms**.
+- Sin gestor: **109,4 ± 5,0 ms**.
+- Make: **114,2 ± 4,7 ms**.
+- Just: **116,6 ± 5,5 ms**.
+- Task: **157,0 ± 5,9 ms**.
+- Mage: **490,5 ± 12,5 ms**.
+- XC: **112,2 ± 4,4 ms**.
 
 ![Comparación de los gestores de tareas](capturas/ejecucion-sintaxis.png)
 
 ## Instalación de las herramientas
 
-En mi Ubuntu ya tenía Make instalado. Para probar las otras herramientas instalé Just con `apt`, Task con su instalador y Mage con `go install`.
+En mi Ubuntu ya tenía Make instalado. Instalé Just con `apt` y Task con su instalador. Mage v1.17.2 lo descargué como binario desde GitHub Releases.
 
 Medí estos tiempos de instalación:
 
 - Task: **5,124 s**.
-- Mage: **6,544 s**.
+- Mage: **1,08 s**.
 
 ![Instalación de Task](capturas/instalacion-task.png)
 
@@ -57,7 +57,7 @@ Además, comprobé las herramientas disponibles en `golang:1.27.4-bookworm`. Esa
 
 ![Herramientas disponibles en la imagen de Go](capturas/entorno-go.png)
 
-XC v0.9.0 lo instalé con `go install` en mi Ubuntu y tardó **6,030 s**.
+XC v0.9.0 lo descargué como binario para Linux desde GitHub Releases, sin compilarlo, y tardó **1,41 s**.
 
 ![Instalación de XC](capturas/xc-instalacion.png)
 

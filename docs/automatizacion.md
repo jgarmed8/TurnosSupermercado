@@ -57,7 +57,7 @@ Además, comprobé las herramientas disponibles en `golang:1.27.4-bookworm`. Esa
 
 ![Herramientas disponibles en la imagen de Go](capturas/entorno-go.png)
 
-XC v0.9.0 lo instalé con go install en mi Ubuntu y tardó 6,030 s.
+XC v0.9.0 lo instalé con `go install` en mi Ubuntu y tardó **6,030 s**.
 
 ![Instalación de XC](capturas/xc-instalacion.png)
 

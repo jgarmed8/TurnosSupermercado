@@ -57,9 +57,17 @@ Además, comprobé las herramientas disponibles en `golang:1.27.4-bookworm`. Esa
 
 ![Herramientas disponibles en la imagen de Go](capturas/entorno-go.png)
 
-XC lo instalé con `go install` en mi Ubuntu y tardó **6,030 s**.
+XC v0.9.0 lo instalé con go install en mi Ubuntu y tardó 6,030 s.
 
 ![Instalación de XC](capturas/xc-instalacion.png)
+
+## Elección
+
+Me quedo con Make.
+
+Make, Just y XC tardaron alrededor de 115 ms, muy cerca de los 112 ms de ejecutar `gofmt` directamente. Task y Mage tardaron bastante más.
+
+Make ya estaba instalado en mi Ubuntu y en la imagen de Go que comprobé, así que prefiero mantenerlo sin instalar otro gestor para las tareas actuales.
 
 ## Comprobación de la tarea
 
@@ -73,3 +81,5 @@ Con los archivos actuales del proyecto, `make check` termina con código de sali
 También he probado un archivo temporal con un error de sintaxis. La tarea detectó el error y terminó con un código distinto de `0`.
 
 Después eliminé el archivo temporal y volví a comprobar que la tarea terminaba correctamente.
+
+La tarea solo comprueba la sintaxis, por lo que no detecta errores de tipos.

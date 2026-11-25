@@ -1,6 +1,7 @@
 package turnos
 
 import (
+	"slices"
 	"testing"
 	"time"
 )
@@ -27,6 +28,19 @@ func TestDisponibilidadCompleta(t *testing.T) {
 		{
 			"todo el horario",
 			[]TramoHorario{tramo(9, 0, 12, 0)},
+			true,
+		},
+		{
+			"horario exacto",
+			[]TramoHorario{tramo(10, 0, 11, 0)},
+			true,
+		},
+		{
+			"tramos repetidos",
+			[]TramoHorario{
+				tramo(10, 0, 11, 0),
+				tramo(10, 0, 11, 0),
+			},
 			true,
 		},
 		{
@@ -63,6 +77,16 @@ func TestDisponibilidadCompleta(t *testing.T) {
 			nil,
 			false,
 		},
+		{
+			"disponible otro dia",
+			[]TramoHorario{
+				{
+					inicio: time.Date(2026, 11, 25, 10, 0, 0, 0, time.UTC),
+					fin:    time.Date(2026, 11, 25, 11, 0, 0, 0, time.UTC),
+				},
+			},
+			false,
+		},
 	}
 
 	for _, caso := range casos {
@@ -71,7 +95,118 @@ func TestDisponibilidadCompleta(t *testing.T) {
 				disponibilidad: caso.disponibilidad,
 			}
 
+			original := append(
+				[]TramoHorario(nil),
+				trabajador.disponibilidad...,
+			)
+
 			obtenido := trabajador.disponibleDurante(hueco)
+
+			if obtenido != caso.esperado {
+				t.Errorf(
+					"esperado %v, obtenido %v",
+					caso.esperado,
+					obtenido,
+				)
+			}
+
+			if !slices.Equal(trabajador.disponibilidad, original) {
+				t.Error("se ha modificado la disponibilidad del trabajador")
+			}
+		})
+	}
+}
+
+func TestDisponibilidadHuecoInvalido(t *testing.T) {
+	inicio := time.Date(2026, 11, 24, 10, 0, 0, 0, time.UTC)
+
+	trabajador := Trabajador{
+		disponibilidad: []TramoHorario{
+			{
+				inicio: inicio,
+				fin:    inicio.Add(2 * time.Hour),
+			},
+		},
+	}
+
+	casos := []struct {
+		nombre string
+		hueco  TramoHorario
+	}{
+		{
+			"sin duracion",
+			TramoHorario{
+				inicio: inicio,
+				fin:    inicio,
+			},
+		},
+		{
+			"fin anterior al inicio",
+			TramoHorario{
+				inicio: inicio.Add(time.Hour),
+				fin:    inicio,
+			},
+		},
+	}
+
+	for _, caso := range casos {
+		t.Run(caso.nombre, func(t *testing.T) {
+			if trabajador.disponibleDurante(caso.hueco) {
+				t.Error("un hueco con horario incorrecto no puede cubrirse")
+			}
+		})
+	}
+}
+
+func TestTareaPermitida(t *testing.T) {
+	trabajador := &Trabajador{
+		tareasPermitidas: map[Tarea]struct{}{
+			"caja":       {},
+			"inventario": {},
+		},
+	}
+
+	casos := []struct {
+		nombre     string
+		trabajador *Trabajador
+		tarea      Tarea
+		esperado   bool
+	}{
+		{
+			"puede atender caja",
+			trabajador,
+			"caja",
+			true,
+		},
+		{
+			"puede hacer inventario",
+			trabajador,
+			"inventario",
+			true,
+		},
+		{
+			"no puede recoger pales",
+			trabajador,
+			"recogida de palés",
+			false,
+		},
+		{
+			"sin tareas permitidas",
+			&Trabajador{},
+			"caja",
+			false,
+		},
+		{
+			"sin trabajador",
+			nil,
+			"caja",
+			false,
+		},
+	}
+
+	for _, caso := range casos {
+		t.Run(caso.nombre, func(t *testing.T) {
+			obtenido := caso.trabajador.puedeRealizar(caso.tarea)
 
 			if obtenido != caso.esperado {
 				t.Errorf(

@@ -39,3 +39,12 @@ func (t *Trabajador) disponibleDurante(hueco TramoHorario) bool {
 
 	return false
 }
+
+func (t *Trabajador) puedeRealizar(tarea Tarea) bool {
+	if t == nil {
+		return false
+	}
+
+	_, permitida := t.tareasPermitidas[tarea]
+	return permitida
+}

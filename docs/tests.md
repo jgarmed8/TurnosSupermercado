@@ -84,6 +84,10 @@ Con `go test` pasan los tests. Ginkgo falla porque intenta guardar el fichero `m
 
 ![Ejecutores con los fuentes en solo lectura](capturas/solo-lectura.png)
 
+También he probado a ejecutar los tests escritos con `testing` indicando otro directorio para el binario mediante `-o`. Ginkgo no reconoce esta opción al ejecutar los tests, mientras que con `go test` pasan sin necesidad de cambiar ningún permiso.
+
+![Prueba de Ginkgo con la opción -o](capturas/ginkgo-opcion-o.png)
+
 He probado a compilar el binario con `go test -c -o` indicando un directorio fuera de los fuentes. Al ejecutar ese binario con Ginkgo pasan los dos casos.
 
 ![Ginkgo con el binario fuera de los fuentes](capturas/ginkgo-solo-lectura.png)

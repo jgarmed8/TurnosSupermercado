@@ -4,3 +4,5 @@ entidad: internal/turnos/repartos.go
 automatizar:
   fichero: Makefile
   orden: make
+
+test: internal/turnos/repartos_test.go

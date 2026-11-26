@@ -176,3 +176,52 @@ func TestOcupadoDurante(t *testing.T) {
 		})
 	}
 }
+
+func TestRepartoDePales(t *testing.T) {
+	dia := Dia{2026, time.November, 24}
+	horario := tramoDePrueba(10, 0, 12, 0)
+
+	ana := trabajadorDePrueba("Ana", horario, "palés", "caja")
+	luis := trabajadorDePrueba("Luis", horario, "palés")
+	eva := trabajadorDePrueba("Eva", horario, "caja")
+
+	reparto := RepartosDeTareas{
+		plantilla: &Plantilla{
+			trabajadores: []*Trabajador{ana, luis, eva},
+		},
+		huecosPorDia: map[Dia][]Hueco{
+			dia: {
+				{tarea: "palés", tramo: horario},
+				{tarea: "palés", tramo: horario},
+				{tarea: "caja", tramo: horario},
+				{tarea: "reposición", tramo: horario, aplazable: true},
+			},
+		},
+	}
+
+	for indice, trabajador := range []*Trabajador{ana, luis, eva} {
+		pendientes, err := reparto.PendientesObligatorios(dia)
+
+		if err != nil || !slices.Equal(pendientes, []int{0, 1, 2}[indice:]) {
+			t.Fatalf("pendientes antes de cubrir el hueco %d: %v, %v", indice, pendientes, err)
+		}
+
+		if err := reparto.Asignar(dia, indice, trabajador); err != nil {
+			t.Fatal(err)
+		}
+	}
+
+	pendientes, err := reparto.PendientesObligatorios(dia)
+
+	if err != nil || len(pendientes) != 0 {
+		t.Errorf("quedan huecos obligatorios: %v, %v", pendientes, err)
+	}
+
+	if reparto.huecosPorDia[dia][3].cubiertoPor != nil {
+		t.Error("la reposición debería seguir pendiente")
+	}
+
+	if _, err := reparto.PendientesObligatorios(Dia{2026, time.November, 25}); !errors.Is(err, ErrDiaSinReparto) {
+		t.Errorf("esperado día sin reparto, obtenido %v", err)
+	}
+}

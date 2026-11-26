@@ -94,12 +94,13 @@ func TestCandidatos(t *testing.T) {
 
 	ana := trabajadorDePrueba("Ana", horario, "palés", "caja")
 	luis := trabajadorDePrueba("Luis", horario, "palés")
+	marta := trabajadorDePrueba("Marta", horario, "palés")
 	eva := trabajadorDePrueba("Eva", horario, "caja")
 	corto := trabajadorDePrueba("Pablo", tramoDePrueba(10, 0, 11, 0), "palés")
 
 	reparto := RepartosDeTareas{
 		plantilla: &Plantilla{
-			trabajadores: []*Trabajador{ana, luis, eva, corto},
+			trabajadores: []*Trabajador{ana, luis, marta, eva, corto},
 		},
 		huecosPorDia: map[Dia][]Hueco{
 			dia: {
@@ -115,7 +116,7 @@ func TestCandidatos(t *testing.T) {
 		esperados []*Trabajador
 		err       error
 	}{
-		{1, []*Trabajador{luis}, nil},
+		{1, []*Trabajador{luis, marta}, nil},
 		{2, nil, nil},
 		{0, nil, ErrHuecoCubierto},
 		{3, nil, ErrHuecoNoExiste},

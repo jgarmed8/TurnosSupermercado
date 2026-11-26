@@ -114,3 +114,21 @@ func (r RepartosDeTareas) Candidatos(dia Dia, indice int) ([]*Trabajador, error)
 
 	return candidatos, nil
 }
+
+func (r RepartosDeTareas) PendientesObligatorios(dia Dia) ([]int, error) {
+	huecos, existe := r.huecosPorDia[dia]
+
+	if !existe {
+		return nil, ErrDiaSinReparto
+	}
+
+	var pendientes []int
+
+	for indice, hueco := range huecos {
+		if !hueco.aplazable && hueco.cubiertoPor == nil {
+			pendientes = append(pendientes, indice)
+		}
+	}
+
+	return pendientes, nil
+}

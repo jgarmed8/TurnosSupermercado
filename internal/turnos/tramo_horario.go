@@ -10,3 +10,7 @@ type TramoHorario struct {
 func (t TramoHorario) valido() bool {
 	return t.inicio.Before(t.fin)
 }
+
+func (t TramoHorario) solapa(otro TramoHorario) bool {
+	return t.inicio.Before(otro.fin) && otro.inicio.Before(t.fin)
+}

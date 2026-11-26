@@ -110,3 +110,13 @@ make check
 Esta tarea no modifica los archivos ni compila el proyecto.
 
 Las pruebas que hice para elegir el gestor están en [la documentación de automatización](docs/automatizacion.md).
+
+## Tests
+
+Para comprobar la lógica del reparto ejecuto `make test` desde la raíz del proyecto.
+
+```bash
+make test
+```
+
+La comparación de las herramientas de test está en [docs/tests.md](docs/tests.md).

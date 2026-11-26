@@ -1,89 +1,54 @@
 # Herramientas para los tests
 
-En el Milestone 1 vamos a comprobar la lógica del reparto de tareas.
+Necesitamos comprobar que Juan puede repartir las tareas entre los trabajadores respetando sus horarios, las tareas que pueden realizar y las asignaciones que ya tienen.
 
-Los turnos ya están hechos. Lo que necesitamos es comprobar qué trabajadores pueden cubrir cada hueco teniendo en cuenta su disponibilidad, las tareas que pueden realizar y las asignaciones que ya tienen.
-
-También hay que probar los casos en los que una asignación no se puede hacer. Por ejemplo, cuando un trabajador solo está disponible durante parte del horario o cuando ya está haciendo otra tarea.
-
-## Búsqueda de alternativas
-
-Antes de elegir las herramientas voy a comparar por separado las bibliotecas de aserciones, los frameworks de tests y las herramientas que permiten ejecutarlos.
-
-La comparación se hará utilizando casos del propio proyecto. Primero estableceré los criterios y después comprobaré las alternativas para decidir cuáles utilizar.
+He buscado alternativas en la [documentación de Go](https://pkg.go.dev/testing) y en el apartado de testing de [Awesome Go](https://github.com/avelino/awesome-go#testing).
 
 ## Biblioteca de aserciones
 
 ### Criterios
 
-Necesitamos comprobar que el resultado obtenido coincide con el esperado.
+- Cómo se comprueba el resultado de una asignación y el error que devuelve cuando no se puede hacer.
+- Tiempo de ejecución del mismo test con cada opción.
 
-También tendremos que comprobar qué errores devuelve el reparto cuando una asignación no es válida.
+### Opciones
 
-Para comparar las alternativas utilizaré los mismos casos, viendo cómo se escriben las comprobaciones y si resulta fácil entender qué ha fallado.
-
-### Alternativas
-
-- **testing:** permite comprobar los resultados utilizando `t.Errorf` y `t.Fatal`.
-- **Testify:** incluye funciones de aserción para comparar resultados y comprobar errores.
-- **go-cmp:** permite comparar valores y mostrar las diferencias entre ellos.
-- **Gomega:** utiliza matchers para expresar las comprobaciones.
-
-La elección se hará después de comprobar cómo funciona cada alternativa con los tests del proyecto.
+- Sin biblioteca de aserciones, utilizando if, t.Errorf y errors.Is.
+- [Testify](https://github.com/stretchr/testify).
+- [go-cmp](https://github.com/google/go-cmp), para comparar valores.
+- [Gomega](https://github.com/onsi/gomega), que utiliza matchers.
 
 ## Framework de tests
 
 ### Criterios
 
-Vamos a probar distintos horarios, trabajadores y situaciones del reparto.
+- Cómo se agrupan varios casos del mismo problema y se identifica cuál ha fallado.
+- Tiempo de ejecución de los mismos casos.
 
-Necesitamos poder separar los casos para saber cuál falla sin tener que revisar todos los demás.
+### Opciones
 
-También comprobaré cómo se organizan los mismos tests con cada herramienta y cuánto tardan en ejecutarse.
+- [testing](https://pkg.go.dev/testing).
+- [Ginkgo](https://github.com/onsi/ginkgo).
+- [GoConvey](https://github.com/smartystreets/goconvey).
 
-### Alternativas
-
-- **testing:** permite organizar los casos mediante `t.Run`.
-- **GoConvey:** permite agrupar distintas comprobaciones.
-- **Ginkgo:** organiza las pruebas mediante especificaciones.
-
-La elección dependerá de cómo se puedan expresar y ejecutar nuestros tests.
-
-## Herramienta para ejecutar los tests
+## Herramienta CLI
 
 ### Criterios
 
-Necesitamos ejecutar todos los tests desde la raíz del proyecto y saber si alguno falla.
+- Que termine por sí sola después de ejecutar los tests.
+- Que funcione con los fuentes en solo lectura.
+- Tiempo de ejecución de los mismos tests.
 
-También comprobaré que las herramientas no necesiten escribir dentro de la carpeta de los fuentes, porque más adelante el proyecto tendrá que poder probarse con el código en solo lectura.
+### Opciones
 
-Compararé los tiempos de ejecución utilizando los mismos tests y evitando que se reutilicen resultados anteriores de la caché.
+- [go test](https://pkg.go.dev/cmd/go).
+- [Ginkgo CLI](https://onsi.github.io/ginkgo/).
+- [GoConvey CLI](https://github.com/smartystreets/goconvey).
 
-### Alternativas
+También he considerado gotestsum, aunque utiliza go test para ejecutar las pruebas y cambia la presentación de los resultados.
 
-- **go test:** permite compilar y ejecutar los tests de Go.
-- **Ginkgo CLI:** permite ejecutar las pruebas organizadas con Ginkgo.
+## Forma de medir
 
-También he tenido en cuenta **gotestsum**, pero utiliza `go test` para ejecutar las pruebas y cambia la forma de presentar los resultados. Por eso no lo consideraré otro ejecutor independiente.
+Utilizo una copia del código del reparto en un directorio temporal para probar las alternativas sin añadir sus dependencias al proyecto.
 
-## Pruebas y elección
-
-Para realizar las comparaciones utilizaré los tests de disponibilidad y tareas permitidas del paquete `internal/turnos`.
-
-Las medidas se harán manteniendo las mismas condiciones para las distintas alternativas.
-
-Con `go test` utilizaré `-count=1` para evitar que se reutilicen los resultados de la caché.
-
-Todavía no he elegido las herramientas definitivas. Primero realizaré las pruebas y después añadiré aquí los resultados y los motivos de la elección.
-
-## F.I.R.S.T.
-
-Los tests utilizan fechas fijas y no necesitan consultar servicios externos.
-
-Cada caso comprueba automáticamente si obtiene el resultado esperado.
-
-También ejecutaré las pruebas varias veces y en distinto orden para comprobar que no dependen unas de otras.
-
-Los tests de disponibilidad se escribieron antes de implementar esa comprobación. Haré lo mismo con las tareas permitidas y los siguientes problemas del reparto.
-
-Mediré los tiempos antes de elegir las herramientas para comprobar que los tests se ejecutan rápidamente.
+Las medidas se realizan con Go 1.27.4 y Hyperfine 1.18.0 en Linux, con tres ejecuciones de calentamiento y treinta mediciones. Con go test utilizo -count=1 para ejecutar los tests sin reutilizar resultados anteriores.
